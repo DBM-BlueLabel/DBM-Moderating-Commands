@@ -126,7 +126,7 @@
       "name": "Remove Member Role"
     },
     {
-      "title": "Member Unmuted by Moderators",
+      "title": "Member UnMuted by Moderators",
       "author": "${member.displayName}",
       "color": "0000ff",
       "timestamp": "true",
@@ -148,6 +148,15 @@
       "storage": "1",
       "varName": "unmute-embed",
       "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "unmute-embed",
+      "channel": "2",
       "varName2": "",
       "storage3": "0",
       "varName3": "",
