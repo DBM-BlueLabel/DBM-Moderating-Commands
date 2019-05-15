@@ -278,6 +278,15 @@
       "name": "Send Embed Message"
     },
     {
+      "storage": "1",
+      "varName": "mute-embed",
+      "channel": "2",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
       "time": "${tempVars(\"minutes\")}",
       "measurement": "2",
       "name": "Wait"
@@ -339,6 +348,15 @@
       "storage": "1",
       "varName": "unmute-embed",
       "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "unmute-embed",
+      "channel": "2",
       "varName2": "",
       "storage3": "0",
       "varName3": "",
