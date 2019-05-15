@@ -161,6 +161,26 @@
       "storage3": "0",
       "varName3": "",
       "name": "Send Embed Message"
+    },
+    {
+      "storage": "2",
+      "varName": "mute-log-channel",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "unmute-embed",
+      "channel": "6",
+      "varName2": "mute-log-channel",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
     }
   ]
 }
