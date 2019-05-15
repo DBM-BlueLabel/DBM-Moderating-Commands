@@ -1,0 +1,157 @@
+{
+  "name": "unmute",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "xiXVj",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MUTE_MEMBERS",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** You don't have permissions to use this command.\nRequired: `Mute Members` Permission.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "mentioned-member",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "mentioned-member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Wrong Format:**\nunmute <@MentionMember>",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "find": "Muted",
+      "storage": "1",
+      "varName": "mute-role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "mute-role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** How can someone be muted if the mute role isn't exists?",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "role": "3",
+      "varName2": "mute-role",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** This member isn't muted.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName2": "",
+      "role": "3",
+      "varName": "mute-role",
+      "name": "Remove Member Role"
+    },
+    {
+      "title": "Member Unmuted by Moderators",
+      "author": "${member.displayName}",
+      "color": "0000ff",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${msg.author.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "unmute-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "unmute-embed",
+      "message": "${member} Unmute ${tempVars(\"mentioned-member\")}.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "unmute-embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
