@@ -1,0 +1,94 @@
+{
+  "name": "warnlog",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "EbwVf",
+  "actions": [
+    {
+      "comment": "©All rights reserved Blue Label#6215",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "KICK_MEMBERS",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** You don't have permissions to use this command.\nRequired: `Kick Members` Permission.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "4",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "channel",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Wrong Format:**\nwarnlog <#channel>",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "2",
+      "varName": "warn-log-channel",
+      "changeType": "0",
+      "value": "tempVars(\"channel\")",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "warn-log-channel",
+      "name": "Save Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "All the warning logs will sent to ${mentionedChannel}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
