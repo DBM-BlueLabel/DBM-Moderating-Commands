@@ -1,0 +1,134 @@
+{
+  "name": "warnings",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "iMxuE",
+  "actions": [
+    {
+      "comment": "©All rights reserved Blue Label#6215",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "mentioned-member",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "mentioned-member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "5",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "mentioned-id",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "mentioned-id",
+      "comparison": "1",
+      "value": "${msg.author.id}",
+      "iftrue": "0",
+      "iftrueVal": "5",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "warnings",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "warnings-data",
+      "name": "Store Member Data"
+    },
+    {
+      "title": "",
+      "author": "${member.displayName}",
+      "color": "RANDOM",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${msg.author.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "warnings-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "warnings-embed",
+      "message": "${member.displayName}, You have **${tempVars(\"warnings-data\")}** warning points.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "warnings-embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "warnings",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "warnings-data",
+      "name": "Store Member Data"
+    },
+    {
+      "title": "",
+      "author": "${tempVars(\"mentioned-member\").displayName}",
+      "color": "RANDOM",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"mentioned-member\").user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "warnings-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "warnings-embed",
+      "message": "${tempVars(\"mentioned-member\").displayName} have **${tempVars(\"warnings-data\")}** warning points.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "warnings-embed",
+      "message": "Requested By: ${member.displayName}",
+      "footerIcon": "${msg.author.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "warnings-embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
