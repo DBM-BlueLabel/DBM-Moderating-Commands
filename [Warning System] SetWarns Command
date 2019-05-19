@@ -1,0 +1,228 @@
+{
+  "name": "setwarns",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "fbjKd",
+  "actions": [
+    {
+      "comment": "©All rights reserved Blue Label#6215",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "BAN_MEMBERS",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** You don't have permissions to use this command.\nRequired: `Ban Members` Permission.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "mentioned-member",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "amount",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Parameters"
+    },
+    {
+      "storage": "1",
+      "varName": "amount",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Wrong Format:**\n[p]setwarns <@MentionMember> <amount>",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "mentioned-id",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "mentioned-id",
+      "comparison": "1",
+      "value": "${msg.author.id}",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** You can't edit your own warnings.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "amount",
+      "comparison": "3",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** You must to type a valid number.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "amount",
+      "comparison": "4",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** If you want to set this member 3 warning points, just ban him.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "warnings",
+      "changeType": "0",
+      "value": "parseInt(tempVars(\"amount\"))",
+      "name": "Control Member Data"
+    },
+    {
+      "title": "Warnings Edited",
+      "author": "${tempVars(\"mentioned-member\").displayName}",
+      "color": "RANDOM",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"mentioned-member\").user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "edit-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "edit-embed",
+      "message": "${member.displayName} setted **${tempVars(\"amount\")}** warning points to ${tempVars(\"mentioned-member\").displayName}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "2",
+      "varName": "warn-log-channel",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "edit-embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "edit-embed",
+      "channel": "6",
+      "varName2": "warn-log-channel",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
